@@ -1,0 +1,20 @@
+{
+    "name": "psg-queue-handler",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "restart": "bash restart.sh",
+      "test": "node -e \"console.log('Environment test: ' + (process.env.PORT || 'Environment variables not loaded properly'))\""
+    },
+    "engines": {
+      "node": ">=18.0.0"
+    },
+    "dependencies": {
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "puppeteer": "^21.3.8",
+      "twilio": "^4.20.0"
+    }
+  }
