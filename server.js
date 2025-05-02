@@ -46,11 +46,16 @@ app.post('/start', async (req, res) => {
         '--disable-dev-shm-usage',
         '--disable-accelerated-2d-canvas',
         '--no-first-run',
-        '--no-zygote',
+        '--no-zygote', 
         '--single-process',
-        '--disable-gpu'
+        '--disable-gpu',
+        '--disable-software-rasterizer',
+        '--disable-features=site-per-process',
+        '--ignore-certificate-errors',
+        '--allow-running-insecure-content'
       ],
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null
+      executablePath: '/usr/bin/google-chrome-stable',
+      ignoreHTTPSErrors: true
     });
     
     const page = await browser.newPage();
